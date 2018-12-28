@@ -1,0 +1,19 @@
+/public/wp
+/public/wp-content/plugins
+
+# Don't ignore the upload & themes dir
+!/public/wp-content/themes
+!/public/wp-content/uploads
+
+# But do ingore everything in them
+/public/wp-content/themes/*
+/public/wp-content/uploads/*
+
+# Don’t ignore shuttle-fossc theme
+!/public/wp-content/themes/shuttle-fossc
+!/public/wp-content/themes/shuttle
+
+/vendor
+production-config.php
+local-config.php
+composer.lock

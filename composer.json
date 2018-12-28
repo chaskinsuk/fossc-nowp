@@ -1,0 +1,37 @@
+{
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "composer/installers": "1.*",
+        "johnpbloch/wordpress": "5.0.*",
+
+	"wpackagist-plugin/akismet": "*",
+        "wpackagist-plugin/better-font-awesome": "1.7.1",
+        "wpackagist-plugin/default-featured-image": "1.6.1",
+        "wpackagist-plugin/display-posts-shortcode": "2.9.0",
+        "wpackagist-plugin/login-logout-register-menu": "1.0",
+        "wpackagist-plugin/mystickymenu": "2.0.5",
+        "wpackagist-plugin/post-grid": "2.0.29",
+        "wpackagist-plugin/post-tags-and-categories-for-pages": "1.4.1",
+        "wpackagist-plugin/recent-posts-shortcode-widget": "1.8",
+        "wpackagist-plugin/recent-posts-widget-with-thumbnails": "6.2.1",
+        "wpackagist-plugin/the-events-calendar": "4.6.24.1",
+        "wpackagist-plugin/the-events-calendar-shortcode": "1.9",
+        "wpackagist-plugin/facebook-auto-publish": "2.0.1",
+        "wpackagist-plugin/wp-google-maps": "7.10.40",
+        "wpackagist-plugin/wp-private-content-plus": "1.27",
+        "wpackagist-theme/shuttle": "1.2.2"
+    },
+    "extra": {
+        "wordpress-install-dir": "public/wp",
+        "installer-paths": {
+            "public/wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+            "public/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "public/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+        }
+    }
+}
