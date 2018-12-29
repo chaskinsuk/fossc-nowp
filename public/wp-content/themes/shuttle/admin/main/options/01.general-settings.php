@@ -200,36 +200,38 @@ $shuttle_post_sidebars     = shuttle_var ( 'shuttle_post_sidebars' );
 ---------------------------------------------------------------------------------- */
 
 /* Add custom intro section [Extend for more options in future update] */
-function shuttle_custom_intro() {
+if( !function_exists('shuttle_custom_intro') ) {
+	function shuttle_custom_intro() {
 
-// Get theme options values.
-$shuttle_general_introswitch      = shuttle_var ( 'shuttle_general_introswitch' );
-$shuttle_general_breadcrumbswitch = shuttle_var ( 'shuttle_general_breadcrumbswitch' );
+	// Get theme options values.
+	$shuttle_general_introswitch      = shuttle_var ( 'shuttle_general_introswitch' );
+	$shuttle_general_breadcrumbswitch = shuttle_var ( 'shuttle_general_breadcrumbswitch' );
 
-$class_intro = NULL;
+	$class_intro = NULL;
 
-	if ( ! is_front_page() ) {
+		if ( ! is_front_page() ) {
 
-		// Determine if breadcrumb is enables. Ensures table-cells align correctly with css
-		if ( $shuttle_general_breadcrumbswitch == '1' ) {
-			$class_intro = 'option2';
-		} else {
-			$class_intro = 'option1';	
-		}
+			// Determine if breadcrumb is enables. Ensures table-cells align correctly with css
+			if ( $shuttle_general_breadcrumbswitch == '1' ) {
+				$class_intro = 'option2';
+			} else {
+				$class_intro = 'option1';	
+			}
 
-		// If no breadcrumbs are available on current page then change intro class to option1
-		if ( shuttle_input_breadcrumbswitch() == '' ) { 
-			$class_intro = 'option1'; 
-		}
+			// If no breadcrumbs are available on current page then change intro class to option1
+			if ( shuttle_input_breadcrumbswitch() == '' ) { 
+				$class_intro = 'option1'; 
+			}
 
-		// Output intro with breadcrumbs if set
-		if ( empty( $shuttle_general_introswitch ) or $shuttle_general_introswitch == '1' ) {
-			echo	'<div id="intro" class="' . esc_attr( $class_intro ) . '"><div class="wrap-safari"><div id="intro-core">',
-					'<h1 class="page-title">',
-					shuttle_title_select(),
-					'</h1>',
-					shuttle_input_breadcrumbswitch(),
-					'</div></div></div>';
+			// Output intro with breadcrumbs if set
+			if ( empty( $shuttle_general_introswitch ) or $shuttle_general_introswitch == '1' ) {
+				echo	'<div id="intro" class="' . esc_attr( $class_intro ) . '"><div class="wrap-safari"><div id="intro-core">',
+						'<h1 class="page-title">',
+						shuttle_title_select(),
+						'</h1>',
+						shuttle_input_breadcrumbswitch(),
+						'</div></div></div>';
+			}
 		}
 	}
 }

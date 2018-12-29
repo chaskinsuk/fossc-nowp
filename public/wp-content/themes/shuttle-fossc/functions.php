@@ -138,7 +138,7 @@ function remove_admin_bar() {
 /* CJH Login */
 function ajax_login_init(){
 
-    wp_register_script('ajax-login-script', get_template_directory_uri() . '/ajax-login-script.js', array('jquery') ); 
+    wp_register_script('ajax-login-script', get_stylesheet_directory_uri() . '/ajax-login-script.js', array('jquery') ); 
     wp_enqueue_script('ajax-login-script');
 
     wp_localize_script( 'ajax-login-script', 'ajax_login_object', array( 
@@ -220,7 +220,7 @@ function shuttle_custom_intro() {
 							background-repeat: no-repeat !important;
 							background-size: cover !important;
 							color: white;
-							height: 200px;
+							height: 250px;
 						}
 					</style>';
 			}

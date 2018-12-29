@@ -7,7 +7,7 @@
     ],
     "require": {
         "composer/installers": "1.*",
-        "johnpbloch/wordpress": "5.0.*",
+        "johnpbloch/wordpress": "5.0.1",
 
 	"wpackagist-plugin/akismet": "*",
         "wpackagist-plugin/better-font-awesome": "1.7.1",
@@ -24,7 +24,7 @@
         "wpackagist-plugin/facebook-auto-publish": "2.0.1",
         "wpackagist-plugin/wp-google-maps": "7.10.40",
         "wpackagist-plugin/wp-private-content-plus": "1.27",
-        "wpackagist-theme/shuttle": "1.2.2"
+	"wpackagist-plugin/gutenberg": "4.7.1"
     },
     "extra": {
         "wordpress-install-dir": "public/wp",
