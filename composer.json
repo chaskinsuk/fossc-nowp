@@ -3,13 +3,23 @@
         {
             "type": "composer",
             "url": "https://wpackagist.org"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/corysimmons/wp-sync-db.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/wp-sync-db/wp-sync-db-media-files.git"
         }
     ],
     "require": {
         "composer/installers": "1.*",
         "johnpbloch/wordpress": "5.0.1",
+        "wp-sync-db/wp-sync-db": "1.6.1",
+        "wp-sync-db/wp-sync-db-media-files": "1.1.5",
 
-	"wpackagist-plugin/akismet": "*",
+	    "wpackagist-plugin/akismet": "*",
         "wpackagist-plugin/better-font-awesome": "1.7.1",
         "wpackagist-plugin/default-featured-image": "1.6.1",
         "wpackagist-plugin/display-posts-shortcode": "2.9.0",

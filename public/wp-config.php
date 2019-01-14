@@ -41,6 +41,11 @@ define( 'WP_DEBUG', false );
 // =========================
 define( 'AUTOMATIC_UPDATER_DISABLED', false );
 
+// =========================
+// Define cookiespath for login
+// =========================
+define( 'COOKIEPATH', '/' );
+
 // =======================
 // Load WordPress Settings
 // =======================

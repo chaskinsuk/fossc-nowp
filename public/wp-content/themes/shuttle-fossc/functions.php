@@ -1,4 +1,6 @@
 <?php
+// update_option( 'siteurl', 'http://localhost/wp' );
+// update_option( 'home', 'http://localhost' );
 // ---------------------------
 // CJH enqueue the styling
 // ---------------------------
