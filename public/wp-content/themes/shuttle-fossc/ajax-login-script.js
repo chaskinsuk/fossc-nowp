@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
 
     // Show the login dialog box on click
-    $('a#show_login').on('click', function(e){
+    $('li.show_login > a').on('click', function(e){
         $('body').prepend('<div class="login_overlay"></div>');
         $('form#login').fadeIn(500);
         $('div.login_overlay, form#login a.close').on('click', function(){
