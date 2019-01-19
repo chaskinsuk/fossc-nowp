@@ -1,17 +1,19 @@
 /public/wp
-/public/wp-content/plugins
 
 # Don't ignore the upload & themes dir
 !/public/wp-content/themes
 !/public/wp-content/uploads
+!/public/wp-content/plugins
 
 # But do ingore everything in them
 /public/wp-content/themes/*
 /public/wp-content/uploads/*
+/public/wp-content/plugins/*
 
 # Don’t ignore shuttle-fossc theme
 !/public/wp-content/themes/shuttle-fossc
 !/public/wp-content/themes/shuttle
+!/public/wp-content/plugins/the-events-calendar-shortcode
 
 /vendor
 production-config.php
