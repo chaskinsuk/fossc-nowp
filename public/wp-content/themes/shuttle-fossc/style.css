@@ -770,3 +770,8 @@ a.login_button{
     position: fixed;
     z-index: 998;
 }
+
+.fossc {
+    margin: 0 0 25px;
+    border: 1px solid #ddd;
+}

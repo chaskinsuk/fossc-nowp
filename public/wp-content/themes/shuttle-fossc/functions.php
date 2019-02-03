@@ -1,6 +1,20 @@
 <?php
 // update_option( 'siteurl', 'http://localhost/wp' );
 // update_option( 'home', 'http://localhost' );
+
+
+//----------------------------------------------------------------------------------
+//	Add Theme Options Panel & Assign Variable Values
+//----------------------------------------------------------------------------------
+
+	// Add Theme Options Features.
+	require_once( get_theme_file_path() . '/admin/main/options/04.footer.php' );
+
+//----------------------------------------------------------------------------------
+//	Assign Theme Specific Functions
+//----------------------------------------------------------------------------------
+
+
 // ---------------------------
 // CJH enqueue the styling
 // ---------------------------
@@ -222,7 +236,7 @@ function shuttle_custom_intro() {
 							background-repeat: no-repeat !important;
 							background-size: cover !important;
 							color: white;
-							height: 250px;
+							height: 400px;
 						}
 					</style>';
 			}
@@ -230,4 +244,42 @@ function shuttle_custom_intro() {
 	
 	}
 
+if ( class_exists('Tribe__Events__Main') ){
+
+	/* get event category names in text format */
+	function tribe_get_text_categories ( $event_id = null ) {
+
+		if ( is_null( $event_id ) ) {
+			$event_id = get_the_ID();
+		}
+
+		$event_cats = '';
+
+		$term_list = wp_get_post_terms( $event_id, Tribe__Events__Main::TAXONOMY );
+
+		foreach( $term_list as $term_single ) {
+			$event_cats .= $term_single->name . ', ';
+		}
+
+		return rtrim($event_cats, ', ');
+
+	}
+
+}
+
+function dfi_category ( $dfi_id, $post_id ) {
+	$racing = '565';
+	$training = '534';
+	$juniors ='277';
+	// all which have 'racing' as a category
+	if ( tribe_get_text_categories( $post_id ) == 'Racing' ) {
+	  return $racing; // default racing picture
+	} else if (tribe_get_text_categories( $post_id ) == 'Training' ) {
+		return $training; // default training picture
+	} else if (tribe_get_text_categories( $post_id ) == 'Junior club' ) {
+		return $juniors; // default training picture
+	}
+	return $dfi_id; // the original featured image id
+}
+add_filter( 'dfi_thumbnail_id', 'dfi_category', 10, 2 );
 ?>
