@@ -325,9 +325,11 @@ add_action( 'body_class', 'shuttle_input_footerscroll');
 	COPYRIGHT TEXT
 ---------------------------------------------------------------------------------- */
 
-function shuttle_input_copyright() {
+if( !function_exists('shuttle_input_copyright') ) {
+	function shuttle_input_copyright() {
 
-	printf( __( 'Developed by %1$s. Powered by %2$s.', 'shuttle' ) , '<a href="https://shuttlethemes.com/" target="_blank">Shuttle Themes</a>', '<a href="//www.wordpress.org/" target="_blank">WordPress</a>'); 
+		printf( __( 'Developed by %1$s. Powered by %2$s.', 'shuttle' ) , '<a href="https://shuttlethemes.com/" target="_blank">Shuttle Themes</a>', '<a href="//www.wordpress.org/" target="_blank">WordPress</a>'); 
+	}
 }
 
 
